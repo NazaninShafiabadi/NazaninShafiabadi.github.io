@@ -11,11 +11,12 @@
         /* ==========================================================================
            GLOBAL VARIABLES
            ========================================================================== */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap');
         
         :root {
             /* Fonts */
             --font-main: 'Inter', sans-serif;
+            --font-heading: 'Playfair Display', serif;
             
             /* Colors */
             --color-bg: #fcfcfc;
@@ -93,6 +94,7 @@
         }
 
         .hero h1 {
+            font-family: var(--font-heading);
             font-size: 2.8rem;
             font-weight: 800;
             color: var(--color-text-dark);
@@ -150,6 +152,7 @@
         section { margin-bottom: 5rem; }
 
         .section-title {
+            font-family: var(--font-heading);
             font-size: 1.8rem;
             font-weight: 800;
             color: var(--color-text-dark);
@@ -272,6 +275,7 @@
         .btn-link {
             display: inline-flex;
             align-items: center;
+            gap: 0.4rem;
             font-size: 0.75rem;
             font-weight: 600;
             color: var(--color-text-muted);
@@ -395,7 +399,7 @@
                     <div class="pub-content">
                         <p class="item-authors">Pierre-Antoine Lequeu, Salim Hafid, Paul Lerner, <strong>Nazanin Shafiabadi</strong>, Laurène Cave, David Mas, Jean-Philippe Cointet, Benjamin Piwowarski, François Yvon</p>
                         <p class="item-meta">AAAI 2027 (Artificial Intelligence for Social Impact Track)</p>
-                        <span class="btn-link disabled"><i class="fas fa-file-pdf"></i> Paper (Hopefully Coming Soon)</span>
+                        <span class="btn-link disabled"><i class="fas fa-file-pdf"></i> Paper (Coming Soon, Hopefully)</span>
                     </div>
                 </div>
 
