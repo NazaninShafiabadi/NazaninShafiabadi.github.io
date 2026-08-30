@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazanin Shafiabadi | PhD Researcher</title>
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           GLOBAL VARIABLES
+           ========================================================================== */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            /* Fonts */
+            --font-main: 'Inter', sans-serif;
+            
+            /* Colors */
+            --color-bg: #fcfcfc;
+            --color-card-bg: #f8fafc;
+            --color-text-dark: #0f172a;   /* Headings */
+            --color-text-body: #475569;   /* Main paragraphs */
+            --color-text-muted: #64748b;  /* Dates, subtext */
+            --color-accent: #2563eb;      /* Primary Blue */
+            --color-accent-hover: #1d4ed8;
+            --color-border: #f1f5f9;      /* Light lines separating sections */
+            
+            /* Badge Colors */
+            --badge-review-bg: #ffedd5;
+            --badge-review-text: #c2410c;
+            --badge-accepted-bg: #dbeafe;
+            --badge-accepted-text: #1d4ed8;
+            --badge-published-bg: #d1fae5;
+            --badge-published-text: #047857;
+            --badge-poster-bg: #f3e8ff;
+            --badge-poster-text: #7e22ce;
+            --badge-oral-bg: #e0e7ff;
+            --badge-oral-text: #4338ca;
+            --badge-talk-bg: #ffe4e6;
+            --badge-talk-text: #be123c;
+        }
+
+        /* ==========================================================================
+           BASE STYLES
+           ========================================================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-bg);
+            color: var(--color-text-body);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        a { text-decoration: none; transition: color 0.2s; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+
+        /* ==========================================================================
+           LAYOUT & STRUCTURE
+           ========================================================================== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Hero / Header Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 5rem 0 2rem;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--color-text-dark);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        /* Social Icons */
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            font-size: 1.5rem;
+        }
+        
+        .social-links a { color: #94a3b8; }
+        .social-links a:hover { color: var(--color-accent); }
+
+        /* Navigation */
+        .main-nav {
+            width: 100%;
+            margin-top: 3rem;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: 1.2rem 0;
+        }
+
+        .nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-list a {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-list a:hover { color: var(--color-accent); }
+
+        /* Main Content Sections */
+        main { padding: 3rem 0; }
+        
+        section { margin-bottom: 5rem; }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--color-text-dark);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .section-title.bordered {
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .about-text strong {
+            font-weight: 600;
+            color: var(--color-text-dark);
+        }
+
+        /* ==========================================================================
+           SPECIFIC COMPONENTS (Cards, Lists, Badges)
+           ========================================================================== */
+        
+        /* Grid Cards (Interests, Training) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) { .grid-container { grid-template-columns: 1fr 1fr; } }
+
+        .card {
+            background-color: var(--color-card-bg);
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .card-title {
+            color: var(--color-text-dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-title i { color: var(--color-accent); }
+        .card-desc { font-size: 0.9rem; font-weight: 300; }
+
+        /* List Items (Publications, Experience) */
+        .list-item { margin-bottom: 2rem; }
+        
+        .list-header {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        @media (min-width: 768px) {
+            .list-header { flex-direction: row; align-items: flex-start; }
+            .list-header.space-between { justify-content: space-between; align-items: baseline; }
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text-dark);
+            line-height: 1.4;
+        }
+
+        .item-authors {
+            font-size: 0.9rem;
+            color: var(--color-text-body);
+            margin-bottom: 0.25rem;
+        }
+        
+        .item-authors strong {
+            color: var(--color-text-dark);
+            font-weight: 600;
+        }
+
+        .item-meta {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .pub-content { margin-left: 8rem; }
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.1rem 0.6rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border-radius: 0.2rem;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-top: 0.2rem;
+            text-align: center;
+        }
+        .badge.fixed-width { width: 5rem; }
+        
+        .badge.review { background-color: var(--badge-review-bg); color: var(--badge-review-text); }
+        .badge.accepted { background-color: var(--badge-accepted-bg); color: var(--badge-accepted-text); }
+        .badge.published { background-color: var(--badge-published-bg); color: var(--badge-published-text); }
+        .badge.poster { background-color: var(--badge-poster-bg); color: var(--badge-poster-text); }
+        .badge.oral { background-color: var(--badge-oral-bg); color: var(--badge-oral-text); }
+        .badge.talk { background-color: var(--badge-talk-bg); color: var(--badge-talk-text); }
+
+        /* Buttons & Links */
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-text-muted);
+            border: 1px solid var(--color-border);
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            margin-right: 0.5rem;
+            transition: all 0.2s;
+        }
+        .btn-link:hover {
+            background-color: var(--color-text-dark);
+            color: white;
+            border-color: var(--color-text-dark);
+        }
+        .btn-link.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none; /* Prevents the button from being clicked */
+            background-color: transparent;
+        }
+
+        .text-link {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-text-muted);
+        }
+        .text-link:hover { color: var(--color-accent); }
+
+        /* Icons List (Education) */
+        .icon-list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .icon-box {
+            background-color: var(--color-border);
+            color: var(--color-text-muted);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            margin-top: 0.25rem;
+        }
+        .icon-box.primary {
+            background-color: var(--color-accent-light);
+            color: var(--color-accent);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <!-- Header -->
+        <header class="hero">
+            <img src="img/profile.jpg" alt="Nazanin Shafiabadi" class="profile-img">
+            <h1>Nazanin Shafiabadi</h1>
+            <p class="hero-subtitle">PhD Researcher<br>ISIR, Sorbonne University</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/NazaninShafiabadi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/nazanin-shafiabadi" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://scholar.google.com/citations?user=fEHzDKIAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="mailto:nazanin.shafiabadi@isir.upmc.fr" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#interests">Interests</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            
+            <!-- About Section -->
+            <section id="about">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-text">
+                    <p>I am a PhD Researcher in the MLIA team at the ISIR lab (Sorbonne University), working under the supervision of <strong>François Yvon</strong>. My work bridges Artificial Intelligence and the social sciences. My primary research investigates the expression of bias in multilingual language models—specifically, how these biases vary across languages and how machine translation systems can introduce or amplify cultural distortions in subjective content, such as stance or opinion.</p>
+                    <p>I am currently funded by Bpifrance as a member of the "AI For Democracy Democratic Commons" global research program. In this context, I study the application and impact of AI systems within democratic processes. Ultimately, my goal is to develop language technologies that preserve semantic and pragmatic invariance across languages, ensuring that AI is equitable, transparent, and culturally aware.</p>
+                </div>
+            </section>
+
+            <!-- Interests -->
+            <section id="interests">
+                <h2 class="section-title bordered">Research Interests</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <strong class="card-title"><i class="fas fa-language"></i> Multilingual NLP</strong>
+                        <span class="card-desc">Evaluating and achieving semantic and pragmatic invariance across languages and translation systems.</span>
+                    </div>
+                    <div class="card">
+                        <strong class="card-title"><i class="fas fa-balance-scale"></i> AI Fairness & Bias Mitigation</strong>
+                        <span class="card-desc">Identifying how translation systems introduce or amplify social, cultural, and subjective biases.</span>
+                    </div>
+                    <div class="card">
+                        <strong class="card-title"><i class="fas fa-university"></i> AI for Democracy</strong>
+                        <span class="card-desc">Exploring the safe, equitable usage of AI systems and LLMs within democratic processes.</span>
+                    </div>
+                    <div class="card">
+                        <strong class="card-title"><i class="fas fa-brain"></i> LM Interpretability</strong>
+                        <span class="card-desc">Understanding lexical acquisition and the emergence of language abilities in neural language models during pre-training.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications -->
+            <section id="publications">
+                <h2 class="section-title bordered">Publications</h2>
+                
+                <div class="list-item">
+                    <div class="list-header">
+                        <span class="badge review">UNDER REVIEW</span>
+                        <h3 class="item-title">Toward Collective-Centric Evaluation of Preference Inference for Participatory Democracy</h3>
+                    </div>
+                    <div class="pub-content">
+                        <p class="item-authors">Pierre-Antoine Lequeu, Salim Hafid, Paul Lerner, <strong>Nazanin Shafiabadi</strong>, Laurène Cave, David Mas, Jean-Philippe Cointet, Benjamin Piwowarski, François Yvon</p>
+                        <p class="item-meta">AAAI 2027 (Artificial Intelligence for Social Impact Track)</p>
+                        <span class="btn-link disabled"><i class="fas fa-file-pdf"></i> Paper (Hopefully Coming Soon)</span>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-header">
+                        <span class="badge accepted">ACCEPTED</span>
+                        <h3 class="item-title">Data Shapes What, Scale Shapes How: Lexical Learning Dynamics in LLMs</h3>
+                    </div>
+                    <div class="pub-content">
+                        <p class="item-authors"><strong>Nazanin Shafiabadi</strong>, Guillaume Wisniewski</p>
+                        <p class="item-meta">EMNLP 2026</p>
+                        <span class="btn-link disabled"><i class="fas fa-file-pdf"></i> Paper (Coming Soon)</span>
+                    </div>
+                </div>
+
+              <div class="list-item">
+                    <div class="list-header">
+                        <span class="badge published">PUBLISHED</span>
+                        <h3 class="item-title">Assessing the import of morphology in gender assignment: A computational study of French</h3>
+                    </div>
+                    <div class="pub-content">
+                        <p class="item-authors"><strong>Nazanin Shafiabadi</strong>, Nina Nusbaumer, Olivier Bonami</p>
+                        <p class="item-meta">Lexique Journal 2026</p>
+                        <a href="https://dx.doi.org/10.54563/lexique.2262" target="_blank" class="btn-link"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+              
+              <div class="list-item">
+                    <div class="list-header">
+                        <span class="badge published">PUBLISHED</span>
+                        <h3 class="item-title">Biases in translation: Assessing opinion distortion in machine translated text</h3>
+                    </div>
+                    <div class="pub-content">
+                        <p class="item-authors"><strong>Nazanin Shafiabadi</strong>, François Yvon</p>
+                        <p class="item-meta">LREC 2026</p>
+                        <a href="https://doi.org/10.63317/2pjio9ho8rxg" target="_blank" class="btn-link"><i class="fas fa-file-pdf"></i> Paper</a>
+                      <a href="https://github.com/NazaninShafiabadi/mt-invariance" target="_blank" class="btn-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-header">
+                        <span class="badge published">PUBLISHED</span>
+                        <h3 class="item-title">Beyond Surprisal: A dual metric framework for lexical skill acquisition in LLMs</h3>
+                    </div>
+                    <div class="pub-content">
+                        <p class="item-authors"><strong>Nazanin Shafiabadi</strong>, Guillaume Wisniewski</p>
+                        <p class="item-meta">COLING 2025 · <strong style="color:#d97706;"><i class="fas fa-trophy"></i> Winner of the Best Short Paper Award</strong></p>
+                        <a href="https://aclanthology.org/2025.coling-main.443/" target="_blank" class="btn-link"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://github.com/NazaninShafiabadi/antisurprisal" target="_blank" class="btn-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+
+                <h2 class="section-title bordered" style="margin-top: 4rem;">Presentations & Posters</h2>
+                
+                <div class="list-item">
+                    <div class="list-header">
+                        <span class="badge poster fixed-width">POSTER</span>
+                        <h4 class="item-title">Biases in translation: Assessing opinion distortion in machine translated text</h4>
+                    </div>
+                    <div class="pub-content">
+                        <p class="item-authors"><strong>Nazanin Shafiabadi</strong>, François Yvon</p>
+                        <p class="item-meta">LREC 2026</p>
+                        <a href="presentations/lrec-2026-poster.pdf" target="_blank" class="text-link"><i class="fas fa-image"></i> View Poster</a>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-header">
+                        <span class="badge poster fixed-width">POSTER</span>
+                        <h4 class="item-title">Anti-surprise : Une métrique complémentaire pour évaluer l’apprentissage lexical</h4>
+                    </div>
+                    <div class="pub-content">
+                        <p class="item-authors"><strong>Nazanin Shafiabadi</strong>, Guillaume Wisniewski</p>
+                        <p class="item-meta">TALN 2025</p>
+                        <a href="presentations/taln-2025-poster.pdf" target="_blank" class="text-link"><i class="fas fa-image"></i> View Poster</a>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-header">
+                        <span class="badge oral fixed-width">ORAL</span>
+                        <h4 class="item-title">Beyond Surprisal: A dual metric framework for lexical skill acquisition in LLMs</h4>
+                    </div>
+                    <div class="pub-content">
+                        <p class="item-authors"><strong>Nazanin Shafiabadi</strong>, Guillaume Wisniewski</p>
+                        <p class="item-meta">COLING 2025</p>
+                        <a href="presentations/coling-2025-slides.pdf" target="_blank" class="text-link"><i class="fas fa-desktop"></i> View Slides</a>
+                    </div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-header">
+                        <span class="badge talk fixed-width">TALK</span>
+                        <h4 class="item-title">Assessing the import of morphology in gender assignment: A computational study of French</h4>
+                    </div>
+                    <div class="pub-content">
+                        <p class="item-authors"><strong>Nazanin Shafiabadi</strong>, Nina Nusbaumer, Olivier Bonami</p>
+                        <p class="item-meta">LLcD 2024</p>
+                        <a href="presentations/llcd-2024-slides.pdf" target="_blank" class="text-link"><i class="fas fa-desktop"></i> View Slides</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section id="experience">
+                <h2 class="section-title bordered">Experience</h2>
+                
+                <div class="list-item">
+                    <div class="list-header space-between">
+                        <h3 class="item-title">Research Intern</h3>
+                        <span class="item-meta">Apr – Aug 2024</span>
+                    </div>
+                    <p style="color:var(--color-accent); font-weight:600; font-size:0.9rem; margin-bottom:0.75rem;">Laboratoire de Linguistique Formelle (LLF) · Paris, France</p>
+                    <p style="font-size:0.9rem; margin-bottom:0.5rem;"><strong>Supervision:</strong> Guillaume Wisniewski</p>
+                    <p class="card-desc">Investigated the mechanisms by which neural language models (particularly BERT) acquire language abilities during pre-training. Extracted and analyzed learning curves from intermediate checkpoints to examine the progression of lexical and syntactic knowledge acquisition, revealing how token frequency and syntactic complexity influence learning dynamics.</p>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-header space-between">
+                        <h3 class="item-title">Research Intern</h3>
+                        <span class="item-meta">Jun – Jul 2023</span>
+                    </div>
+                    <p style="color:var(--color-accent); font-weight:600; font-size:0.9rem; margin-bottom:0.75rem;">Laboratoire de Linguistique Formelle (LLF) · Paris, France</p>
+                    <p style="font-size:0.9rem; margin-bottom:0.5rem;"><strong>Supervision:</strong> Olivier Bonami</p>
+                    <p class="card-desc">Evaluated how major LLMs handle neology. Analyzed whether ChatGPT-3.5 could provide accurate definitions for neologisms coined after its training date, and conversely, whether it could coin accurate terms given the definition of these neologisms.</p>
+                </div>
+            </section>
+
+             <!-- Education -->
+             <section id="education">
+                <h2 class="section-title bordered">Education</h2>
+                
+                <div style="margin-bottom: 3rem;">
+
+                    <div class="icon-list-item">
+                        <div class="icon-box primary"><i class="fas fa-graduation-cap"></i></div>
+                        <div>
+                            <h3 class="item-title">PhD in NLP & Artificial Intelligence</h3>
+                            <p class="item-meta">ISIR Lab, Sorbonne Université (France) · <strong style="color:var(--color-text-muted);">2024 – Present</strong></p>
+                        </div>
+                    </div>
+                    
+                    <div class="icon-list-item">
+                        <div class="icon-box"><i class="fas fa-university"></i></div>
+                        <div>
+                            <h3 class="item-title">MSc in Computational Linguistics</h3>
+                            <p class="item-meta">Université Paris Cité (France) · <strong style="color:var(--color-text-muted);">2022 – 2024</strong></p>
+                        </div>
+                    </div>
+                    
+                    <div class="icon-list-item">
+                        <div class="icon-box"><i class="fas fa-book"></i></div>
+                        <div>
+                            <h3 class="item-title">BA in English Language and Literature</h3>
+                            <p class="item-meta">Ferdowsi University of Mashhad (Iran) · <strong style="color:var(--color-text-muted);">2015 – 2019</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="item-title" style="margin-bottom: 1.5rem;">Training</h3>
+                <div class="grid-container">
+                    <div class="card">
+                        <h4 class="item-title" style="margin-bottom: 0.25rem;">ALPS Spring School</h4>
+                        <p style="color:var(--color-accent); font-size:0.75rem; font-weight:600; margin-bottom:0.75rem;">Mar – Apr 2026 · Aussois, France</p>
+                        <p class="card-desc">International event dedicated to NLP, Speech Processing, and AI featuring collaborative research discussions with leading experts.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="item-title" style="margin-bottom: 0.25rem;">LxMLS Summer School</h4>
+                        <p style="color:var(--color-accent); font-size:0.75rem; font-weight:600; margin-bottom:0.75rem;">Jul 2025 · Lisbon, Portugal</p>
+                        <p class="card-desc">Deepening of machine learning, deep learning, and NLP processes with hands-on coding labs at Instituto Superior Técnico.</p>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+</body>
+</html>
