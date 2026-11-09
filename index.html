@@ -309,31 +309,6 @@
             color: var(--color-text-muted);
         }
         .text-link:hover { color: var(--color-accent); }
-
-        /* News Items */
-        .news-item {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1.25rem;
-        }
-        @media (min-width: 768px) {
-            .news-item {
-                flex-direction: row;
-                align-items: baseline;
-                gap: 1.5rem;
-            }
-        }
-        .news-date {
-            min-width: 90px;
-            font-family: var(--font-heading);
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--color-accent);
-        }
-        .news-text {
-            font-size: 1rem;
-            color: var(--color-text-body);
-        }
         
         /* Icons List (Education) */
         .icon-list-item {
@@ -392,12 +367,18 @@
             <section id="news">
                 <h2 class="section-title bordered">News</h2>
                 
-                <div class="news-item">
-                    <div class="news-date">Oct 2026</div>
-                    <div class="news-text">
+                <div class="list-item">
+                    <div class="list-header space-between">
+                        <h3 class="item-title" style="font-size: 1rem;">
+                            <i class="fas fa-paper-plane" style="color: var(--color-accent); margin-right: 0.4rem;"></i>
+                            Call for Papers Open!
+                        </h3>
+                        <span class="item-meta">Oct 2026</div>
+                    </div>
+                    <p class="card-desc">
                         <i class="fas fa-paper-plane" style="color: var(--color-accent); margin-right: 0.4rem;"></i>
                         We are now accepting submissions for <a href="https://sites.google.com/view/multidems" target="_blank" class="text-link" style="font-size: 1rem;">MultiDems</a> (The 1st Multidisciplinary Workshop on NLP for Democracies), co-located with EACL 2027 in Athens, Greece.
-                    </div>
+                    </p>
                 </div>
                 
             </section>
