@@ -28,6 +28,8 @@
             --color-accent: #2563eb;      /* Primary Blue */
             --color-accent-hover: #1d4ed8;
             --color-border: #f1f5f9;      /* Light lines separating sections */
+            --color-link: #059669;        /* Emerald Green */
+            --color-link-hover: #047857;  /* Darker Emerald */
             
             /* Badge Colors */
             --badge-review-bg: #ffedd5;
@@ -306,12 +308,10 @@
         .text-link {
             font-size: 0.75rem;
             font-weight: 600;
-            /* color: var(--color-text-muted); */
-            color: var(--color-accent);
+            color: var(--color-link);
         }
-        /* .text-link:hover { color: var(--color-accent); } */
         .text-link:hover { 
-            color: var(--color-accent-hover); 
+            color: var(--color-link-hover); 
         }
         
         /* News Items */
@@ -399,7 +399,6 @@
                 <div class="news-item">
                     <div class="news-date">Oct 2026</div>
                     <div class="news-text">
-                        <i class="fas fa-bullhorn" style="color: var(--color-accent); margin-right: 0.4rem;"></i>
                         <a href="https://sites.google.com/view/multidems" target="_blank" class="text-link" style="font-size: 1rem;"><strong>Call for Papers open!</strong></a>
                         We are now accepting submissions for MultiDems (The 1st Multidisciplinary Workshop on NLP for Democracies), co-located with EACL 2027 in Athens, Greece.
                     </div>
